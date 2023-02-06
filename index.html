@@ -49,6 +49,7 @@ speedSlider.addEventListener("input", (event) => {
 
 twistSlider.addEventListener('input', event => {
   modelViewer.animationName = 'twist';
+  modelViewer.timeScale = 1;
   modelViewer.currentTime = event.target.value;
   modelViewer.pause();
 });
