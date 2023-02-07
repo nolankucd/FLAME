@@ -33,6 +33,14 @@
             <input id="twist" type="range" min="0" max="2" step="0.01" value="0">
         </div>
     </div>
+
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>   
+    
 </model-viewer>
 <script type="module">
 const modelViewer = document.querySelector("#compressor-demo");
