@@ -8,8 +8,8 @@
 </head>
 <style>
     model-viewer {
-     width: 800px;
-     height: 800px;
+     width: 600px;
+     height: 600px;
      }
      input[type=range]::-webkit-slider-thumb {
      height : 75px;
@@ -104,14 +104,12 @@ modelViewer.interactionPrompt = 'none';
 
 bendSlider.addEventListener("input", (event) => {
   modelViewer.animationName = 'bend';
-  modelViewer.timeScale = 1;
   modelViewer.currentTime = event.target.value;
   modelViewer.pause();
 });
 
 twistSlider.addEventListener('input', event => {
   modelViewer.animationName = 'twist';
-  modelViewer.timeScale = 1;
   modelViewer.currentTime = event.target.value;
   modelViewer.pause();
 });
