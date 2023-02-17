@@ -6,6 +6,7 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 </head>
+
 <style>
     model-viewer {
      width: 800px;
@@ -16,6 +17,7 @@
      width : 75px;
      }
 </style>
+
 <body>
 <h1>Civil Engineering: Bridge Design</h1>
 <p>This non-interactive animation allows the viewer to orientate and inspect a complex motion due to wind loading on a bridge deck.
@@ -30,11 +32,9 @@ An augmentaed reality button allows the student to place the model in their envi
     ar
     ar-scale="auto"
     xr-environment 
-    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-      🤳 View in AR!
-    </button>
     background-color="#ffffff">
 </model-viewer>
+
 <h1>Mechanical Engineering: Radial Compressor</h1>
 <p>The animations are created in Blender and exported in a binary glTF format (khronos Group).
 This exmaple allows interacion with 3D model of a turbocharger compressor stage. Use the sliders to control the rotation of the impeller and the twist of the blades</p>
@@ -47,10 +47,10 @@ This exmaple allows interacion with 3D model of a turbocharger compressor stage.
     camera-controls
     alt="A compressor"
     xr-environment
-    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-      🤳 View in AR!
-    </button>
     background-color="#ffffff">
+<button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      👋 Activate AR
+  </button>
 </model-viewer>
     <div class="controls">
         <div>
@@ -68,6 +68,7 @@ This exmaple allows interacion with 3D model of a turbocharger compressor stage.
 The mathematical descriptions of stress and strain are key concepts and complex problems are broken down into descriptions of the forces acting on smaller elements of a larger body.
 Control of animation shape keys using mulitiple animation channels allows different types of deformation to be visualised.
 Thoughtful selection of model texture is used to show the stress and strain experienced by each element of the whole.</p>
+
 <model-viewer 
     id="shapekey-demo"
     src="https://nolankucd.github.io/Fluid_Mechanics/deform.glb"
@@ -76,11 +77,9 @@ Thoughtful selection of model texture is used to show the stress and strain expe
     ar-scale="auto"
     alt="shape keys"
     xr-environment
-    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-      🤳 View in AR!
-    </button>
     background-color="#ffffff">
 </model-viewer>
+
     <div class="controls">
         <div>
             <p>Bend: <span id="bend-value"></span></p>
@@ -92,7 +91,6 @@ Thoughtful selection of model texture is used to show the stress and strain expe
         </div>
     </div>
 
-    
 <script type="module">
 const modelViewer = document.querySelector("#compressor-demo");
 const speedSlider = document.querySelector("#speed");
@@ -145,3 +143,4 @@ twistSlider.addEventListener('input', event => {
 </script>
 </body>
 </html>
+
