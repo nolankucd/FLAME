@@ -17,9 +17,27 @@
      }
 </style>
 <body>
-<h1>Radial Compressor</h1>
-<p>Demo using glTF files exported from Blender to allow interacion with 3D models for fluid mechanics education. Use the sliders to control the rotation of the impeller and the twist of the blades</p>
-
+<h1>Civil Engineering: Bridge Design</h1>
+<p>This non-interactive animation allows the viewer to orientate and inspect a complex motion due to wind loading on a bridge deck.
+An augmentaed reality button allows the student to place the model in their environment and interact further.</p>
+<model-viewer 
+    id="bridge-demo"
+    src="https://nolankucd.github.io/Fluid_Mechanics/bridge.glb"
+    ios-src="https://nolankucd.github.io/Fluid_Mechanics/bridge.usdz"
+    camera-controls
+    autoplay
+    alt="Bridge"
+    ar
+    ar-scale="auto"
+    xr-environment 
+    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      🤳 View in AR!
+    </button>
+    background-color="#ffffff">
+</model-viewer>
+<h1>Mechanical Engineering: Radial Compressor</h1>
+<p>The animations are created in Blender and exported in a binary glTF format (khronos Group).
+This exmaple allows interacion with 3D model of a turbocharger compressor stage. Use the sliders to control the rotation of the impeller and the twist of the blades</p>
 <model-viewer 
     id="compressor-demo"
     src="https://nolankucd.github.io/Fluid_Mechanics/compressor.glb"
@@ -29,6 +47,9 @@
     camera-controls
     alt="A compressor"
     xr-environment
+    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      🤳 View in AR!
+    </button>
     background-color="#ffffff">
 </model-viewer>
     <div class="controls">
@@ -42,8 +63,11 @@
         </div>
     </div>
 
-<h1>Shape Keys</h1>
-<p>Control of complex shape keys using mulitiple animation channels</p>
+<h1>Mechanical Engineering: Solid Mechanics</h1>
+<p>In solid mechanics students learn about the deformation of materials for designing resiliant structures.
+The mathematical descriptions of stress and strain are key concepts and complex problems are broken down into descriptions of the forces acting on smaller elements of a larger body.
+Control of animation shape keys using mulitiple animation channels allows different types of deformation to be visualised.
+Thoughtful selection of model texture is used to show the stress and strain experienced by each element of the whole.</p>
 <model-viewer 
     id="shapekey-demo"
     src="https://nolankucd.github.io/Fluid_Mechanics/deform.glb"
@@ -52,6 +76,9 @@
     ar-scale="auto"
     alt="shape keys"
     xr-environment
+    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      🤳 View in AR!
+    </button>
     background-color="#ffffff">
 </model-viewer>
     <div class="controls">
@@ -64,20 +91,7 @@
             <input id="twist1" type="range" style="width: 400px;" style="width: 100px;" min="0" max="4.17" step="0.01" value="0">
         </div>
     </div>
-<h1>Civil Engineering</h1>
-<p>This non-interactive animation allows the viewer to orientate and inspect a complex motion</p>
-<model-viewer 
-    id="bridge-demo"
-    src="https://nolankucd.github.io/Fluid_Mechanics/bridge.glb"
-    ios-src="https://nolankucd.github.io/Fluid_Mechanics/bridge.usdz"
-    camera-controls
-    autoplay
-    alt="Bridge"
-    ar
-    ar-scale="auto"
-    xr-environment
-    background-color="#ffffff">
-</model-viewer>
+
     
 <script type="module">
 const modelViewer = document.querySelector("#compressor-demo");
@@ -127,8 +141,6 @@ twistSlider.addEventListener('input', event => {
   modelViewer.currentTime = event.target.value;
   modelViewer.pause();
 });
-
-
 
 </script>
 </body>
