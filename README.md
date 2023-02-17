@@ -1,3 +1,3 @@
 # 🔥 FLAME: Facilitating Learning with Animation and Multimedia Engagement 🔥
 
-I'm getting started with Github pages and modelviewer.dev to create new teaching materials.
+This project uses Github pages to host glTF files rendered using modelviewer.dev to create new teaching materials.
