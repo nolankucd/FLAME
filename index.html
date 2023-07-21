@@ -114,21 +114,18 @@ Thoughtful selection of model texture is used to show the stress and strain expe
         </div>
     </div>
 
-
-<model-viewer 
-    id="blob"
-    src="https://nolankucd.github.io/FLAME/blob.glb"
+<model-viewer id="blob"
     camera-controls
-    autoplay
-    camera-orbit="-52deg 64deg 38m" field-of-view="30deg"
-    alt="blob"
+    interaction-prompt="none"
+    src="https://nolankucd.github.io/FLAME/blob.glb"
     ar
-    ar-scale="auto"
-    xr-environment 
-    background-color="#ffffff">
-    <button slot="ar-button">
-      🔥 View in AR 🔥
-    </button>
+    alt="A 3D model of a blob">
+    <div class="controls">
+      <div>
+        <p>Colour <span id="colour-value"></span></p>
+        <input id="colour" type="range" min="0" max="8" step="1" value="8">
+      </div>
+  </div>
 </model-viewer>
     
 <script type="module">
@@ -181,6 +178,49 @@ twistSlider.addEventListener('input', event => {
 });
 
 </script>
+
+<script>
+
+const cols = [
+  [0,0,1],
+  [0,0.25,1],
+  [0,1,1],
+  [0,1,0.25],
+  [0,1,0],
+  [0.25,1,0],
+  [1,1,0],
+  [1,0.25,0],
+  [1,0,0]
+];
+
+const colstr = [
+  "Blue",
+  "Light blue",
+  "Cyan",
+  "Pale green",
+  "Green",
+  "Bright green",
+  "Yellow",
+  "Orange",
+  "Red"
+];
+const modelViewerParameters = document.querySelector("model-viewer#blob");
+
+modelViewerParameters.addEventListener("load", (ev) => {
+
+  let material = modelViewerParameters.model.materials[0];
+
+  let colourDisplay = document.querySelector("#colour-value");
+
+  colourDisplay.textContent = material.pbrMetallicRoughness.BaseColorFactor;
+
+  document.querySelector('#blob').addEventListener('input', (event) => {
+    material.pbrMetallicRoughness.setBaseColorFactor(cols[event.target.value]);
+    colourDisplay.textContent = colstr[event.target.value];
+  });
+});
+</script>
+
 </body>
 </html>
 
