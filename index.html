@@ -114,6 +114,23 @@ Thoughtful selection of model texture is used to show the stress and strain expe
         </div>
     </div>
 
+
+<model-viewer 
+    id="blob"
+    src="https://nolankucd.github.io/FLAME/blob.glb"
+    camera-controls
+    autoplay
+    camera-orbit="-52deg 64deg 38m" field-of-view="30deg"
+    alt="blob"
+    ar
+    ar-scale="auto"
+    xr-environment 
+    background-color="#ffffff">
+    <button slot="ar-button">
+      🔥 View in AR 🔥
+    </button>
+</model-viewer>
+    
 <script type="module">
 const modelViewer = document.querySelector("#compressor-demo");
 const speedSlider = document.querySelector("#speed");
