@@ -14,20 +14,22 @@
     
 <body>
 <h1>Demo 2: More complex materials and textures and animation</h1>
-<p>This non-interactive animation allows the viewer to orientate and inspect a complex motion due to wind loading on a bridge deck.
-An augmentaed reality button allows the student to place the model in their environment and interact further.</p>
+<p>This non-interactive animation allows the viewer to observe a complex motion due to wind loading on a bridge deck.
+The model rotated automatically and cannot be manipulated by the viewer.
+An augmented reality button allows the student to place the model in their environment and interact further.</p>
 <model-viewer 
-    id="bridge-demo"
     src="https://nolankucd.github.io/FLAME/bridge.glb"
     scale="0.1 0.1 0.1"
-    camera-controls
     autoplay
     camera-orbit="-52deg 64deg 38m" field-of-view="30deg"
-    alt="Bridge"
     ar
     ar-scale="auto"
-    <button slot="ar-button">
-      🔥 View in AR 🔥
+    interactionPrompt="none"
+    auto-rotate
+    rotation-per-second="1000%"
+    alt="Bridge"
+    <button slot="ar-button"
+      🔥 View in AR 🔥>
     </button>
 </model-viewer>
 
