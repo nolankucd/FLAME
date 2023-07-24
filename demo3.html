@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>FLAME Demo 2: Shape Key Deformation</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+<style>
+    model-viewer {
+        width: 800px;
+        height: 600px;
+     }
+        input[type=range]::-webkit-slider-thumb {
+        height : 75px;
+        width : 75px;
+     }
+</style>
+</head>
+
+<body>
+<h1>Rigid Body Constraints</h1>
+  <p> 
+    We are all familiar with the power of 3D animation in movies and games and it can look very complicated at first glance.
+    However, most animation comprises three simple transformations: translation, rotation and scale.
+    Simple animations using just translation and rotation can be used to explore the behaviour of rigid mechanical systems such as this approximation of an internal combustion engine.
+    The translating pistons result in the rotation of the crank shaft via the connecting rods.
+    Rotating the model to the side shows the inline arrangement of the pistons.
+    The addition of a play/pause button allows for further exploration at any point in the cycle.
+    Additions to this model such as the engine block, valves and cam shaft may be added to further build understanding of the combustion cycle.
+</p>
+
+<div class="container">
+<model-viewer 
+    id="rigid-animation-demo"
+    src="https://nolankucd.github.io/SATLE_FLAME_UCD/engine.glb"
+    autoplay 
+    camera-controls
+    alt="A simple four cylinder engine"
+    background-color="#ffffff">
+</model-viewer>
+</div>
+<div style="position: relative;">
+  <button id="play-pause">Pause</button>
+</div>
+
+<script type="module">
+const modelViewer = document.querySelector("#rigid-animation-demo");
+const playPauseButton = document.querySelector("#play-pause");
+
+modelViewer.interactionPrompt = 'none';
+
+playPauseButton.addEventListener("click", () => {
+  if (modelViewer.paused) {
+    modelViewer.play();
+    playPauseButton.textContent = "Pause";
+  } else {
+    modelViewer.pause();
+    playPauseButton.textContent = "Play";
+  }
+});
+
+modelViewer.pause();
+</script>
+
+</body>
+</html>
