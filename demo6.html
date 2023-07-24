@@ -18,11 +18,13 @@
 </head>
 
 <body>
-<h2>Demo 2, Mechanical Engineering: Solid Mechanics</h2>
+<h1>Demo 6: Shape Key Deformation </h1>
+    
+<h2>Application Area, Mechanical Engineering Solid Mechanics<h2>
 <p>In solid mechanics students learn about the deformation of materials for designing resiliant structures.
 The mathematical descriptions of stress and strain are key concepts and complex problems are broken down into descriptions of the forces acting on smaller elements of a larger body.
 Control of animation shape keys using mulitiple animation channels allows different types of deformation to be visualised.
-Thoughtful selection of model texture is used to show the stress and strain experienced by each element of the whole.</p>
+Thoughtful selection of model texture is used to show the stress and strain experienced by small elements of the whole.</p>
 
 <model-viewer 
     id="shapekey-demo"
@@ -33,11 +35,7 @@ Thoughtful selection of model texture is used to show the stress and strain expe
     ar-scale="auto"
     alt="shape keys"
     xr-environment
-    background-color="#ffffff">
-    <button slot="ar-button">
-      🔥 View in AR 🔥
-    </button>
-</model-viewer>
+    background-color="#ffffff"> 
 
     <div class="controls">
         <div>
@@ -49,7 +47,8 @@ Thoughtful selection of model texture is used to show the stress and strain expe
             <input id="twist1" type="range" style="width: 400px;" style="width: 100px;" min="0" max="4.17" step="0.01" value="0">
         </div>
     </div>
-
+</model-viewer>
+    
 <script type="module">
     const modelViewer = document.querySelector("#shapekey-demo");
     const bendSlider = document.querySelector("#bend1");
