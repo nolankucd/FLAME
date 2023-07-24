@@ -10,17 +10,29 @@
         width: 800px;
         height: 600px;
      }
-
   img {
     max-width: 960px;
     max-height: 520px;
     width:auto;
     height:auto;
   }
+  h3 {
+    text-align: center;
+  }
+  body {
+    margin: 50px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+ .container {
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
 </style>
 </head>
 
 <body>
+<div class="container">
 <h1>Demo 1: Displaying a 3D model in a website</h1>
 <p>Use <a href="https://www.blender.org">Blender</a> to create a simple 3D model.</p>
 <div>
@@ -34,6 +46,6 @@ See the <a href="https://github.com/nolankucd/FLAME/blob/main/demo1.html" target
     camera-controls
     alt="A 3D model of the Blender Monkey">
 </model-viewer>
-
+</div>
 </body>
 </html>
