@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>FLAME Demo 1: The Basics</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+<style>
+    model-viewer {
+        width: 800px;
+        height: 600px;
+     }
+        input[type=range]::-webkit-slider-thumb {
+        height : 75px;
+        width : 75px;
+     }
+  img {
+    max-width: 500px;
+    max-height: 300px;
+    width:auto;
+    height:auto;
+  }
+</head>
+
+<body>
+<h1>Demo 1: Displaying a 3D model in a website</h1>
+<h2>Preparing the model</h2>
+<p>Use <a href="https://www.blender.org">Blender</a> to create a simple 3D model.</p>
+<div>
+<img src="https://nolankucd.github.io/FLAME/blender1.png" alt="An image of the Blender software UI">
+</div>
+<p>Export it as a binary glb file and upload to GitHub and include in your GitHub page.
+See the <a href="https://github.com/nolankucd/FLAME/blob/main/demo1.html" target="_blank">source</a> of this page to see how to inplement the html.</p>
+<model-viewer 
+    src="https://nolankucd.github.io/FLAME/monkey.glb"
+    camera-controls
+    alt="A 3D model of the Blender Monkey">
+</model-viewer>
+
+</body>
+</html>
