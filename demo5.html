@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TITLE</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+<style>
+  model-viewer {
+       width: 800px;
+       height: 400px;
+  }
+</style>
+</head>
+<body>
+<p>This demo illustrates how the base colour of a model may be changed via JavaScript based on the current time of the animation.</p>
+<model-viewer id="blob"
+  src="https://nolankucd.github.io/FLAME/blob.glb"
+  camera-controls
+  interaction-prompt="none"
+  ar
+  autoplay
+  alt="A 3D model of a blob chaning colour">
+</model-viewer>
+
+<p>Animation Time: <span id="animation-time">0</span> ms</p>
+
+<script>
+
+// Red [1, 0, 0] to Blue [0, 0, 1]
+const startColor = [1, 0, 0];
+const endColor = [0, 0, 1];
+
+// Total animation duration
+let totalAnimationTime = 250 * (1000 / 24); // 250 frames at 24 FPS = 10.42 seconds ~ 10420 ms
+
+// Start and end of the color change in the animation timeline
+let colorChangeStart = 50 * (1000 / 24); // Frame 50 at 24 FPS = 2083.33 ms
+let colorChangeEnd = 200 * (1000 / 24); // Frame 200 at 24 FPS = 8333.33 ms
+
+const modelViewerParameters = document.querySelector("model-viewer#blob");
+const timeDisplay = document.querySelector("#animation-time");
+
+function lerp(start, end, t) {
+  return start * (1 - t) + end * t;
+}
+
+modelViewerParameters.addEventListener("load", () => {
+  let material = modelViewerParameters.model.materials[0];
+
+  function transitionColor(timestamp) {
+    let animationTime = timestamp % totalAnimationTime; // This will reset to 0 each time the animation restarts
+
+    timeDisplay.textContent = Math.round(animationTime);
+  
+    if (animationTime >= colorChangeStart && animationTime <= colorChangeEnd) {
+      let t = (animationTime - colorChangeStart) / (colorChangeEnd - colorChangeStart);
+  
+      let r = lerp(startColor[0], endColor[0], t);
+      let g = lerp(startColor[1], endColor[1], t);
+      let b = lerp(startColor[2], endColor[2], t);
+  
+      material.pbrMetallicRoughness.setBaseColorFactor([r, g, b, 1]); // 1 is for alpha value (1 means fully opaque)
+    }
+
+    requestAnimationFrame(transitionColor);
+  }
+
+  requestAnimationFrame(transitionColor);
+});
+
+</script>
+</body>
+</html>
