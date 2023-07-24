@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>FLAME</title>
+    <title>FLAME Demo 4: Turbomachinery</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
@@ -15,18 +15,6 @@
         height : 75px;
         width : 75px;
      }
-     button {
-        padding: 20px;
-        width: 300px;
-        text-align: center;
-        font-size: 28px;
-        background-color: transparent;
-        border-radius: 4px;
-        border: none;
-        position: absolute;
-        top: 16px;
-        right: 16px;
-      }
 </style>
 </head>
 
@@ -35,6 +23,7 @@
 <p>The animations are created in Blender and exported in a binary glTF format (khronos Group).
 This exmaple allows interaction with a 3D model of a turbocharger compressor stage. Use the sliders to control the rotation of the impeller and the twist of the blades.
 This can help students better understand the velocity triangles used to describe the flow direction in these complex shapes which is notoriously difficult in 2D images.</p>
+
 <model-viewer 
     id="compressor-demo"
     src="https://nolankucd.github.io/FLAME/compressor.glb"
