@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>FLAME</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+<style>
+    model-viewer {
+        width: 800px;
+        height: 600px;
+     }
+        input[type=range]::-webkit-slider-thumb {
+        height : 75px;
+        width : 75px;
+     }
+     button {
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        font-size: 28px;
+        background-color: transparent;
+        border-radius: 4px;
+        border: none;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+</style>
+</head>
+
+<body>
+<h2>Demo 2, Mechanical Engineering: Solid Mechanics</h2>
+<p>In solid mechanics students learn about the deformation of materials for designing resiliant structures.
+The mathematical descriptions of stress and strain are key concepts and complex problems are broken down into descriptions of the forces acting on smaller elements of a larger body.
+Control of animation shape keys using mulitiple animation channels allows different types of deformation to be visualised.
+Thoughtful selection of model texture is used to show the stress and strain experienced by each element of the whole.</p>
+
+<model-viewer 
+    id="shapekey-demo"
+    src="https://nolankucd.github.io/FLAME/deform.glb"
+    camera-controls
+    camera-orbit="-52deg 64deg 38m" field-of-view="30deg"
+    ar
+    ar-scale="auto"
+    alt="shape keys"
+    xr-environment
+    background-color="#ffffff">
+    <button slot="ar-button">
+      🔥 View in AR 🔥
+    </button>
+</model-viewer>
+
+    <div class="controls">
+        <div>
+            <p>Bend: <span id="bend-value"></span></p>
+            <input id="bend1" type="range" style="width: 400px;" style="width: 100px;" min="0" max="4.17" step="0.01" value="0">
+        </div>
+        <div>
+            <p>Twist: <span id="twist-value"></span></p>
+            <input id="twist1" type="range" style="width: 400px;" style="width: 100px;" min="0" max="4.17" step="0.01" value="0">
+        </div>
+    </div>
+    
+    <script type="module">
+const modelViewer = document.querySelector("#shapekey-demo");
+const bendSlider = document.querySelector("#bend1");
+const twistSlider = document.querySelector("#twist1");
+
+modelViewer.interactionPrompt = 'none';
+
+bendSlider.addEventListener("input", (event) => {
+  modelViewer.animationName = 'bend';
+  modelViewer.currentTime = event.target.value;
+  modelViewer.pause();
+});
+
+twistSlider.addEventListener('input', event => {
+  modelViewer.animationName = 'twist';
+  modelViewer.currentTime = event.target.value;
+  modelViewer.pause();
+});
+
+</script>
+
+</body>
+</html>
