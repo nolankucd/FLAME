@@ -4,5 +4,5 @@ FLAME is a SATLE funded project that aims to train educators with no experience 
 
 This project uses Github pages to host glTF files rendered using modelviewer.dev to create new teaching materials.
 
-You can browse the denocpage here:
+You can browse the demo page here:
 https://nolankucd.github.io/FLAME/
