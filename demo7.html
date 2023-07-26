@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo 1: The Basics</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+<style>
+    model-viewer {
+        width: 800px;
+        height: 600px;
+     }
+  img {
+    max-width: 960px;
+    max-height: 520px;
+    width:auto;
+    height:auto;
+  }
+  body {
+    margin: 50px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+ .container {
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Demo 7: Controlling an animation with a slider</h1>
+<p>Use the slider twist the model.</p>
+<div>
+  
+<model-viewer 
+    id="twisty_monkey"
+    src="https://nolankucd.github.io/FLAME/twisty_monkey.glb"
+    camera-controls
+    interactionPrompt="none"
+    alt="A twisty 3D model of the Blender Monkey">
+</model-viewer>
+
+<div>
+  <p>Bend: <span id="bend-value"></span></p>
+  <input id="twist" type="range" style="width: 300px;" min="0" max=180*24 step=24/180 value="0">
+</div>
+  
+<p><a href = "https://nolankucd.github.io/FLAME/">Return to main page</a></p>
+
+</div>
+
+<script type="module">
+    const modelViewer = document.querySelector("#twisty_monkey");
+    const twistSlider = document.querySelector("#twist");
+    
+    bendSlider.addEventListener("input", (event) => {
+      modelViewer.animationName = 'bend';
+      modelViewer.currentTime = event.target.value;
+      modelViewer.pause();
+    });
+    
+    twistSlider.addEventListener('input', event => {
+      modelViewer.animationName = 'twist';
+      modelViewer.currentTime = event.target.value;
+      modelViewer.pause();
+    });
+</script>
+</body>
+</html>
