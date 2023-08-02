@@ -4,29 +4,45 @@
     <meta charset="utf-8" />
     <title>FLAME Showcase page</title>
     
-    <style>
-     h3 {
-       text-align: center;
+<style>
+    model-viewer {
+        width: 800px;
+        height: 800px;
      }
-     body {
-       margin: 50px;
-       padding: 20px;
-       font-family: Arial, sans-serif;
+        input[type=range]::-webkit-slider-thumb {
+        height : 75px;
+        width : 75px;
      }
-    .container {
-       max-width: 800px;
-       margin-bottom: 20px;
-     }
-    </style>
+    body {
+    margin: 50px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+ .container {
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+</style>
 </head>
 
 <div class="container">
 <body>
 <h1>FLAME Summer workshop Showcase</h1>
 
-<h2>Project title</h2>
-<p>X worked on...</p>
+<h2>Radiography for Veterinary Science</h2>
+<p>Shauna Daly worked on a rigged model of a cat to demonstrate positioning during radiography.
+This involved applying a skelical rig to a 3D model of a cat and using inverse kinematics to realistically control limb response.</p>
 
+    <model-viewer 
+    id="shapekey-demo"
+    src="https://nolankucd.github.io/FLAME/Cat_X-Ray Positioning.glb"
+    camera-controls
+    alt="Cat X-Ray postioning"
+    environment-image="https://nolankucd.github.io/FLAME/surgery_1k.hdr"
+    skybox-image="https://nolankucd.github.io/FLAME/surgery_1k.hdr"
+    background-color="#ffffff"
+    autoplay>
+</model-viewer>
 <p><a href="xyz_stage.html">Here</a> is an example showing an interactive exploded view of a CAD model.</p>
 
 </div>
