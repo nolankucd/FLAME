@@ -47,8 +47,10 @@ Here he has recreated O'Reilly Hall.</p>
     camera-orbit="44deg 68deg 33m" field-of-view="30deg"
     autoplay>
 </model-viewer>
-<p>You can also use a <a href="https://github.com/vvoovv/blosm">free add-on</a> for Blender to download <a href="https://cloud.google.com/blog/products/maps-platform/create-immersive-3d-map-experiences-photorealistic-3d-tiles">Google Earth 3D tiles</a> and do a lot of the work for you.
-The 3D map of Belfield was imported and a video was created with a flyover of the campus.</p>
+<p>You can also use a <a href="https://github.com/vvoovv/blosm">free add-on</a> for Blender to download <a href="https://cloud.google.com/blog/products/maps-platform/create-immersive-3d-map-experiences-photorealistic-3d-tiles">Google Earth 3D tiles</a> and let it do a lot of the work for you.
+The 3D map of Belfield was imported and a video was created with a flyover of the campus.
+The 3D models are not of particularly high quality when viewed up close but offer a quick way to build a large scene.
+Combinng this data with carefully modelled buildings gives the best result.</p>
 <video width="600" controls>
   <source src="https://nolankucd.github.io/FLAME/UCD_flyover.mp4" type="video/mp4">
 </video>
@@ -56,6 +58,7 @@ The 3D map of Belfield was imported and a video was created with a flyover of th
 <h2>Shauna Daly: Radiography for Veterinary Science</h2>
 <p>Shauna worked on a rigged model of a cat to demonstrate positioning during radiography.
 This involved applying a skeletal rig to a 3D model of a cat and using inverse kinematics to realistically control limb response.
+Students can view the animation from any orientation to get a better understanding of how to perform an X-ray correctly.
 </p>
 
 <model-viewer 
@@ -72,9 +75,9 @@ This can be used to ground a 3D model in a representative environment.
 </p>
 
 <h2>Richard Downey: Parallel Plate Capacitor Demonstration</h2>
-<p>Richard is studying to be a teacher focusing on maths, junior science and physics. 
-This demo illustrates the effect of plate overlap area and the resulting change in the behaviour of the gold leaf electroscope.
-This type of animation can be used to prepare students for what they will observe in an upcoming experiment.
+<p>Richard is studying to become a teacher focusing on maths, science and physics. 
+This demo illustrates the effect of capacitance, plate overlap area and the resulting change in the behaviour of the gold leaf electroscope.
+This type of animation can be used to prepare students for what they will observe in an upcoming experiment or to offer an experience not physically available to them.
 </p>
 <model-viewer 
     src="https://nolankucd.github.io/FLAME/Capacitor Area.glb"
@@ -86,7 +89,11 @@ This type of animation can be used to prepare students for what they will observ
 </model-viewer>
 
 <h2>Rob Sands: Wheel - Roman/Iron Age Britain</h2>
-<p>This wheel is based on examples from two Roman sites in northern Britain. It has two distinct features - a particular type of spoke manufacture that seems to be unique to this period. These are turned on a lathe and have a characteristic double step tenon where the spoke fits into the hub. The second feature is a felloe (wooden outer rim) that is made from a single piece of wood. An iron tyre would probably have fitted over this (not yet modelled!)
+<p>This wheel is based on examples from two Roman sites in northern Britain.
+It has two distinct features - a particular type of spoke manufacture that seems to be unique to this period.
+These are turned on a lathe and have a characteristic double step tenon where the spoke fits into the hub.
+The second feature is a felloe (wooden outer rim) that is made from a single piece of wood.
+An iron tyre would probably have fitted over this (not yet modelled!)
 Often we only find parts of objects like these surviving so a 3D representation that can be taken apart helps students to understand how we visualise a complete object from individual parts found in different locations.
 </p>
 
@@ -100,8 +107,8 @@ Often we only find parts of objects like these surviving so a 3D representation 
 
 <h2>Lauren Miracle: How a DC motor works</h2>
 <p>Lauren is a visiting student working with Dr Nigel Kent from DCU.
-They are interesting in developing visualisation of the operating principles of a DC motor from solid model to exploded view to interaction between current flow and magnetic field resulting in torque.
-Lauren has created a page to demonstrate her work <a href="https://lrnmiracle2.github.io/API_Summer_Internship_Dublin/" target="_blank">HERE</a>.</p>
+They are interesting in developing visualisation of the operating principles of a DC motor from a solid model to exploded view to interaction between current flow and magnetic field resulting in torque.
+Lauren has created her own page to demonstrate her work <a href="https://lrnmiracle2.github.io/API_Summer_Internship_Dublin/" target="_blank">HERE</a>.</p>
 
 <h2>Paul Cuffe: Power Electronics</h2>
 <p>Like Lauren and Nigel, Paul is interested in demonstrating how motors and other electronics work.
@@ -113,7 +120,7 @@ This commercial tool offers an alternative to Model-Viewer making the process of
 </video>
 
 <h2>Donal Holland: Mechanical Engineering Design</h2>
-<p>Donal teaches a core module where students learn about mechanical systems such as linkages, gears and motors.
+<p>Donal teaches a core Engineering module where students learn about mechanical systems such as linkages, gears and motors.
 Using Blender's rigid body physics tools he has created several of these systems.</p>
 <model-viewer 
     src="https://nolankucd.github.io/FLAME/gears1.glb"
@@ -132,7 +139,7 @@ Using Blender's rigid body physics tools he has created several of these systems
 </model-viewer>
     
 <h2>Cathy Roets: Authentic demonstration of Tracheostomy</h2>
-<p>Cathy works to build realistic and authentic simulations for medical practises.
+<p>Cathy works to build realistic and authentic simulations for medical training
 In this case a model of the tracheostomy tube was created and paired with a commercially available 3D model of a syringe.
 The texture on the syringe was updated using Blender and Photoshop to replace the gradations to match that used in real procedures.
 This is case the animation was rendered to video using the cycles renderer which uses path tracing for photorealistic light transport.
@@ -144,7 +151,7 @@ The result is that the use of alpha channel textures and physically based materi
 <h2>Allison McGee: Principles of Magnetic resonance imaging</h2>
 <p>Allison teaches the fundamental principles of the operation of Magnetic resonance imaging.
 This animation illustrates the effect of a magnetic field on the behaviour of a proton as it undergoes Larmor precession.
-Like Cathy, Allison presents her work as a video, however here she has chosen to use the Eevee renderer due to its speed.
+Like Cathy, Allison presents her work as a video. However, here she has chosen to use the Eevee renderer due to its speed.
 There is little need for photorealism in such a demonstration and since this animation renders in near realtime Eevee is a good choice.
 Procedural textures are applied to the particles so that their rotation is clearly visible.</p>
 <video width="600" controls>
@@ -156,7 +163,7 @@ Procedural textures are applied to the particles so that their rotation is clear
 <p>Mugesh expressed an interest in bringing many of the statues and sculptures around us to life.
 Here we see the Black Tulip piece by Eamonn Ceannt located just outside the O'Brien Centre for Science.
 Mugesh used a smartphone 3D scanning <a href="https://lumalabs.ai">app</a> to capture the shape of the sculpture which was then imported into Blender.
-An armature using inverse kinematics is use to deform the geometry.</p>
+An armature using inverse kinematics is used to deform the geometry.</p>
 <model-viewer 
     src="https://nolankucd.github.io/FLAME/Black_tulips.glb"
     camera-controls
@@ -184,17 +191,18 @@ The educator needs to decide which approach suits their teaching.</p>
 
 <h2>Kevin Nolan: Physical simulation of a vehicle</h2>
 <p>Here rigid body physics and rigid body constrainsts such as hinges, sliders and springs are used to simulate a vehicle traversing a complex terrain.
-Dynamic paint is used to capture tracks left by the wheels. 
-Simulations like this run quickly using simplified physics solvers and allow students to interact with concepts such as Hooke's law.</p>
+Dynamic paint is used to capture tracks left by the wheels on the ground. 
+Simulations like this run quickly using simplified physics solvers and allow students to interact with concepts such as Hooke's law in an engaging way.</p>
 <video width="600" controls>
   <source src="https://nolankucd.github.io/FLAME/car.mp4" type="video/mp4">
 </video>
     
 <h2>Exploded CAD assemblies</h2>
-<p><a href="xyz_stage.html">Here</a> is an example showing an interactive exploded view of a CAD model.</p>
+<p><a href="xyz_stage.html">Here</a> is an example showing an interactive exploded view of a CAD model.
+The animation can be interrupted using a slider.</p>
 
 <div>
-<p><a href = "https://nolankucd.github.io/FLAME/">Return to main page</a></p>
+<p><a href = "https://nolankucd.github.io/FLAME/">Return to main page to see more demos.</a></p>
 </div>
 
 <div class="container">   
