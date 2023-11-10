@@ -70,13 +70,16 @@ Compare this 2D image of the heart to the interactive 3D model below.
 const modelViewer = document.querySelector("#heart-demo");
 const speedSlider = document.querySelector("#speed");
 const frameSlider = document.querySelector("#frame");
-
+const speedValue = document.getElementById("speed-value");
+const frameValue = document.getElementById("frame-value");
+    
 modelViewer.interactionPrompt = 'none';
 
 speedSlider.addEventListener("input", (event) => {
   modelViewer.animationName = 'Animation';
   modelViewer.timeScale = event.target.value;
   modelViewer.play();
+  speedValue.textContent = speedSlider.value;
 });
 
 frameSlider.addEventListener('input', event => {
@@ -84,6 +87,7 @@ frameSlider.addEventListener('input', event => {
   modelViewer.timeScale = 1;
   modelViewer.currentTime = event.target.value;
   modelViewer.pause();
+  frameValue.textContent = twistSlider.value /4.08;
 });
 
 const play = () => {
