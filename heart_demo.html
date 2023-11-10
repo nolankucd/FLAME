@@ -56,7 +56,7 @@ Compare this 2D image of the heart to the interactive 3D model below.
 <div class="controls">
     <div>
         <p>Playback speed: <span id="speed-value"></span></p>
-        <input id="speed" type="range" style="width: 400px;" min="0" max="4.08" step="0.0416" value="1">
+        <input id="speed" type="range" style="width: 400px;" min="0" max="1" step="0.1" value="1">
     </div>
     <div>
         <p>Select a single frame: <span id="frame-value"></span></p>
@@ -69,7 +69,7 @@ Compare this 2D image of the heart to the interactive 3D model below.
 <script type="module">
 const modelViewer = document.querySelector("#heart-demo");
 const speedSlider = document.querySelector("#speed");
-const twistSlider = document.querySelector("#frame");
+const frameSlider = document.querySelector("#frame");
 
 modelViewer.interactionPrompt = 'none';
 
@@ -79,7 +79,7 @@ speedSlider.addEventListener("input", (event) => {
   modelViewer.play();
 });
 
-twistSlider.addEventListener('input', event => {
+frameSlider.addEventListener('input', event => {
   modelViewer.animationName = 'Animation';
   modelViewer.timeScale = 1;
   modelViewer.currentTime = event.target.value;
